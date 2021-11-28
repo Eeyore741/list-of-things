@@ -8,6 +8,13 @@
 import Foundation
 
 extension PersistentListProvider: ReceiptListProvider {
+    var receiptListProviderState: ReceiptListProviderState {
+        .idle(result: nil)
+    }
+    
+    func fetchReceiptsWithOffset(_ offset: Int, andLimit limit: Int) {
+        fatalError()
+    }
     
     func fetchReceiptsWithOffset(_ offset: Int, andLimit limit: Int) async throws -> ReceiptList {
         guard let url = self.configuration.bundle.url(forResource: self.configuration.receiptsFileName, withExtension: "json") else {

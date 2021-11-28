@@ -19,7 +19,6 @@
 		EF28AD302743C03100FF8318 /* listofthingsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28AD2F2743C03100FF8318 /* listofthingsUITests.swift */; };
 		EF28AD432743D64600FF8318 /* DocumentListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28AD422743D64600FF8318 /* DocumentListProvider.swift */; };
 		EF28AD452743D96700FF8318 /* PersistentListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28AD442743D96700FF8318 /* PersistentListProvider.swift */; };
-		EF28AD472743DB3C00FF8318 /* PersistentListProvider+DocumentListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28AD462743DB3C00FF8318 /* PersistentListProvider+DocumentListProvider.swift */; };
 		EF28AD4A2743DD0C00FF8318 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF28AD492743DD0C00FF8318 /* Assets.xcassets */; };
 		EF28AD4D2743DFEE00FF8318 /* ListProviderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28AD4C2743DFEE00FF8318 /* ListProviderError.swift */; };
 		EF28AD4F2743E6C000FF8318 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28AD4E2743E6C000FF8318 /* ListViewController.swift */; };
@@ -30,6 +29,11 @@
 		EF28AD5E2743FF3100FF8318 /* ReceiptType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28AD5D2743FF3100FF8318 /* ReceiptType.swift */; };
 		EF28AD602745118A00FF8318 /* ReceiptList.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28AD5F2745118A00FF8318 /* ReceiptList.swift */; };
 		EF28AD622745173D00FF8318 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28AD612745173D00FF8318 /* ListViewModel.swift */; };
+		EF8A46E02753F97700B582C4 /* ListViewModelError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8A46DF2753F97700B582C4 /* ListViewModelError.swift */; };
+		EF8A46E3275446E700B582C4 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8A46E2275446E700B582C4 /* HeaderView.swift */; };
+		EF8A46E52754494A00B582C4 /* ItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8A46E42754494A00B582C4 /* ItemView.swift */; };
+		EF8A46E727544CFF00B582C4 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8A46E627544CFF00B582C4 /* ItemCell.swift */; };
+		EF8A46E92754556700B582C4 /* ListHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF8A46E82754556700B582C4 /* ListHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +72,6 @@
 		EF28AD312743C03100FF8318 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EF28AD422743D64600FF8318 /* DocumentListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentListProvider.swift; sourceTree = "<group>"; };
 		EF28AD442743D96700FF8318 /* PersistentListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentListProvider.swift; sourceTree = "<group>"; };
-		EF28AD462743DB3C00FF8318 /* PersistentListProvider+DocumentListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistentListProvider+DocumentListProvider.swift"; sourceTree = "<group>"; };
 		EF28AD492743DD0C00FF8318 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EF28AD4C2743DFEE00FF8318 /* ListProviderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProviderError.swift; sourceTree = "<group>"; };
 		EF28AD4E2743E6C000FF8318 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +82,11 @@
 		EF28AD5D2743FF3100FF8318 /* ReceiptType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptType.swift; sourceTree = "<group>"; };
 		EF28AD5F2745118A00FF8318 /* ReceiptList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptList.swift; sourceTree = "<group>"; };
 		EF28AD612745173D00FF8318 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		EF8A46DF2753F97700B582C4 /* ListViewModelError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelError.swift; sourceTree = "<group>"; };
+		EF8A46E2275446E700B582C4 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		EF8A46E42754494A00B582C4 /* ItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemView.swift; sourceTree = "<group>"; };
+		EF8A46E627544CFF00B582C4 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		EF8A46E82754556700B582C4 /* ListHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListHeaderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -198,6 +206,7 @@
 			children = (
 				EF28AD612745173D00FF8318 /* ListViewModel.swift */,
 				EF227DA62752C34500CE5E89 /* ListViewModelState.swift */,
+				EF8A46DF2753F97700B582C4 /* ListViewModelError.swift */,
 				EF227DA82752E0D400CE5E89 /* Implementation */,
 			);
 			path = ViewModel;
@@ -226,7 +235,6 @@
 			isa = PBXGroup;
 			children = (
 				EF28AD442743D96700FF8318 /* PersistentListProvider.swift */,
-				EF28AD462743DB3C00FF8318 /* PersistentListProvider+DocumentListProvider.swift */,
 				EF227DA4275253A100CE5E89 /* PersistentListProvider+ReceiptListProvider.swift */,
 			);
 			path = Persistent;
@@ -235,6 +243,7 @@
 		EF28AD552743F04B00FF8318 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				EF8A46E1275446D100B582C4 /* View */,
 				EF28AD412743D5B400FF8318 /* Controller */,
 				EF28AD402743D5AE00FF8318 /* ViewModel */,
 				EF28AD3F2743D5A800FF8318 /* DataModel */,
@@ -251,6 +260,17 @@
 				EF28AD5F2745118A00FF8318 /* ReceiptList.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		EF8A46E1275446D100B582C4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				EF8A46E2275446E700B582C4 /* HeaderView.swift */,
+				EF8A46E42754494A00B582C4 /* ItemView.swift */,
+				EF8A46E627544CFF00B582C4 /* ItemCell.swift */,
+				EF8A46E82754556700B582C4 /* ListHeaderView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -387,16 +407,20 @@
 				EF28AD582743F0B300FF8318 /* Document.swift in Sources */,
 				EF28AD0E2743C02F00FF8318 /* AppDelegate.swift in Sources */,
 				EF28AD622745173D00FF8318 /* ListViewModel.swift in Sources */,
+				EF8A46E52754494A00B582C4 /* ItemView.swift in Sources */,
+				EF8A46E727544CFF00B582C4 /* ItemCell.swift in Sources */,
 				EF28AD102743C02F00FF8318 /* SceneDelegate.swift in Sources */,
 				EF28AD5A2743F0C400FF8318 /* Receipt.swift in Sources */,
 				EF227DA5275253A100CE5E89 /* PersistentListProvider+ReceiptListProvider.swift in Sources */,
+				EF8A46E3275446E700B582C4 /* HeaderView.swift in Sources */,
 				EF28AD432743D64600FF8318 /* DocumentListProvider.swift in Sources */,
 				EF227DA127524FEA00CE5E89 /* ListProviderState.swift in Sources */,
 				EF28AD602745118A00FF8318 /* ReceiptList.swift in Sources */,
 				EF28AD4D2743DFEE00FF8318 /* ListProviderError.swift in Sources */,
 				EF28AD5E2743FF3100FF8318 /* ReceiptType.swift in Sources */,
-				EF28AD472743DB3C00FF8318 /* PersistentListProvider+DocumentListProvider.swift in Sources */,
+				EF8A46E92754556700B582C4 /* ListHeaderView.swift in Sources */,
 				EF227DA72752C34500CE5E89 /* ListViewModelState.swift in Sources */,
+				EF8A46E02753F97700B582C4 /* ListViewModelError.swift in Sources */,
 				EF28AD452743D96700FF8318 /* PersistentListProvider.swift in Sources */,
 				EF28AD4F2743E6C000FF8318 /* ListViewController.swift in Sources */,
 				EF227DA32752530A00CE5E89 /* ReceiptListProvider.swift in Sources */,

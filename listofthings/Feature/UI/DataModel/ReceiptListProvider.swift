@@ -7,6 +7,13 @@
 
 import Foundation
 
+typealias ReceiptListProviderState = ListProviderState<Receipt>
+
+protocol ReceiptListProviderDelegate: AnyObject {
+    func receiptListProviderDidUpdateState(_ provider: ReceiptListProvider)
+}
+
 protocol ReceiptListProvider {
-    func fetchReceiptsWithOffset(_ offset: Int, andLimit limit: Int) async throws -> ReceiptList
+    var receiptListProviderState: ReceiptListProviderState { get }
+    func fetchReceiptsWithOffset(_ offset: Int, andLimit limit: Int)
 }

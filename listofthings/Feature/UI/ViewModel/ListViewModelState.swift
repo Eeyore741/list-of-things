@@ -9,11 +9,7 @@ import Foundation
 
 enum ListViewModelState {
     case idle
-    case busy(withDocuments: Bool, withReceipts: Bool)
-    case error(error: ListViewModelError)
+    case busy
 }
 
-enum ListViewModelError {
-    case documents
-    case receipts
-}
+extension ListViewModelState: Equatable { }
