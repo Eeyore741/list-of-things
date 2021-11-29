@@ -11,6 +11,15 @@ final class ItemView: UIView {
     
     override static var requiresConstraintBasedLayout: Bool { true }
     
+    var icon: String? {
+        set {
+            self.iconLabel.text = newValue
+        }
+        get {
+            self.iconLabel.text
+        }
+    }
+    
     var title: String? {
         set {
             self.titleLabel.text = newValue
@@ -37,6 +46,13 @@ final class ItemView: UIView {
             self.infoLabel.text
         }
     }
+    
+    private let iconLabel: UILabel = {
+        let label = UILabel()
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 32.0)
+        return label
+    }()
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -69,17 +85,23 @@ final class ItemView: UIView {
         guard self.constraintsLayoutOnce == false else { return super.updateConstraints() }
         defer { self.constraintsLayoutOnce = true}
         
+        self.iconLabel.translatesAutoresizingMaskIntoConstraints = false
         self.titleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.subtitleLabel.translatesAutoresizingMaskIntoConstraints = false
         self.infoLabel.translatesAutoresizingMaskIntoConstraints = false
         self.horizontalStack.translatesAutoresizingMaskIntoConstraints = false
         
         [self.titleLabel, self.subtitleLabel, self.infoLabel].forEach { self.horizontalStack.addArrangedSubview($0) }
+        self.addSubview(self.iconLabel)
         self.addSubview(self.horizontalStack)
         
         NSLayoutConstraint.activate([
+            self.centerYAnchor.constraint(equalTo: self.iconLabel.centerYAnchor),
+            self.leadingAnchor.constraint(equalTo: self.iconLabel.leadingAnchor),
+            self.iconLabel.widthAnchor.constraint(equalToConstant: 30.0),
+            self.iconLabel.heightAnchor.constraint(equalTo: self.iconLabel.widthAnchor),
             self.topAnchor.constraint(equalTo: self.horizontalStack.topAnchor),
-            self.leadingAnchor.constraint(equalTo: self.horizontalStack.leadingAnchor),
+            self.horizontalStack.leadingAnchor.constraint(equalTo: self.iconLabel.trailingAnchor, constant: 14.0),
             self.bottomAnchor.constraint(equalTo: self.horizontalStack.bottomAnchor),
             self.trailingAnchor.constraint(equalTo: self.horizontalStack.trailingAnchor),
         ])

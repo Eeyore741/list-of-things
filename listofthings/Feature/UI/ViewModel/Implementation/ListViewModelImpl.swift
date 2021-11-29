@@ -7,6 +7,8 @@
 
 import UIKit
 
+typealias Header = String
+
 final class ListViewModelImpl: ListViewModel {
     
     private(set) var documentsProvider: DocumentListProvider
@@ -30,7 +32,6 @@ final class ListViewModelImpl: ListViewModel {
         }
     }
     
-    typealias Header = String
     var sections: [Header] = []
     var items: [Header: [ItemCell.Item]] = [:]
     
@@ -66,7 +67,9 @@ final class ListViewModelImpl: ListViewModel {
 
 // MARK: - Private helpers
 private extension ListViewModelImpl {
+    
     typealias ListViewModelItems = (documents: [Document], receipts: [Receipt])
+    
     var availableItems: ListViewModelItems {
         switch (self.documentsProvider.documentListProviderState, self.receiptsProvider.receiptListProviderState) {
         case (.idle(.some(.success(let documents))), .idle(.some(.success(let receipts)))):
@@ -87,16 +90,6 @@ private extension ListViewModelImpl {
     }()
     
     func updateSectionsAndItems() {
-//        self.availableItems.documents.forEach {
-//            let header = Self.sectionDateFormatter.string(from: $0.createdAt)
-//
-//            if self.items.keys.contains(header) == false {
-//                self.items[header] = []
-//            }
-//            self.items[header]?.append(ItemCell.Item.init(withDocument: $0))
-//        }
-        
-//        self.sections = []
         var dates: [Date] = self.availableItems.documents.map { $0.createdAt }
         dates = dates + self.availableItems.receipts.map { $0.purchaseDate }
         dates.sort()
@@ -145,16 +138,16 @@ private extension ItemCell.Item {
     
     init(withDocument document: Document) {
         self.logo = document.logo
-        self.title = document.subject
+        self.title = document.subject.capitalized
         self.subtitle = Self.dateFormatter.string(from: document.createdAt)
-        self.info = document.senderName
+        self.info = document.senderName.capitalized
     }
     
     init(withReceipt receipt: Receipt) {
         self.logo = receipt.logo
-        self.title = receipt.storeName
+        self.title = receipt.storeName.capitalized
         self.subtitle = Self.dateFormatter.string(from: receipt.purchaseDate)
-        self.info = ""
+        self.info = String()
     }
     
     static let dateFormatter: DateFormatter = {

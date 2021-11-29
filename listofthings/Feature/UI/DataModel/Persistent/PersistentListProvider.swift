@@ -69,7 +69,6 @@ final class PersistentListProvider: DocumentListProvider, ReceiptListProvider {
             self.receiptListProviderState = ReceiptListProviderState.idle(result: .failure( .decode))
         }
     }
-    
 }
 
 extension PersistentListProvider {

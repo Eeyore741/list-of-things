@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		EF227DA127524FEA00CE5E89 /* ListProviderState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF227DA027524FEA00CE5E89 /* ListProviderState.swift */; };
 		EF227DA32752530A00CE5E89 /* ReceiptListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF227DA22752530A00CE5E89 /* ReceiptListProvider.swift */; };
-		EF227DA5275253A100CE5E89 /* PersistentListProvider+ReceiptListProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF227DA4275253A100CE5E89 /* PersistentListProvider+ReceiptListProvider.swift */; };
 		EF227DA72752C34500CE5E89 /* ListViewModelState.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF227DA62752C34500CE5E89 /* ListViewModelState.swift */; };
 		EF227DAA2752E0ED00CE5E89 /* ListViewModelImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF227DA92752E0ED00CE5E89 /* ListViewModelImpl.swift */; };
 		EF28AD0E2743C02F00FF8318 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF28AD0D2743C02F00FF8318 /* AppDelegate.swift */; };
@@ -56,7 +55,6 @@
 /* Begin PBXFileReference section */
 		EF227DA027524FEA00CE5E89 /* ListProviderState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListProviderState.swift; sourceTree = "<group>"; };
 		EF227DA22752530A00CE5E89 /* ReceiptListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptListProvider.swift; sourceTree = "<group>"; };
-		EF227DA4275253A100CE5E89 /* PersistentListProvider+ReceiptListProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersistentListProvider+ReceiptListProvider.swift"; sourceTree = "<group>"; };
 		EF227DA62752C34500CE5E89 /* ListViewModelState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelState.swift; sourceTree = "<group>"; };
 		EF227DA92752E0ED00CE5E89 /* ListViewModelImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModelImpl.swift; sourceTree = "<group>"; };
 		EF28AD0A2743C02F00FF8318 /* listofthings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = listofthings.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -235,7 +233,6 @@
 			isa = PBXGroup;
 			children = (
 				EF28AD442743D96700FF8318 /* PersistentListProvider.swift */,
-				EF227DA4275253A100CE5E89 /* PersistentListProvider+ReceiptListProvider.swift */,
 			);
 			path = Persistent;
 			sourceTree = "<group>";
@@ -411,7 +408,6 @@
 				EF8A46E727544CFF00B582C4 /* ItemCell.swift in Sources */,
 				EF28AD102743C02F00FF8318 /* SceneDelegate.swift in Sources */,
 				EF28AD5A2743F0C400FF8318 /* Receipt.swift in Sources */,
-				EF227DA5275253A100CE5E89 /* PersistentListProvider+ReceiptListProvider.swift in Sources */,
 				EF8A46E3275446E700B582C4 /* HeaderView.swift in Sources */,
 				EF28AD432743D64600FF8318 /* DocumentListProvider.swift in Sources */,
 				EF227DA127524FEA00CE5E89 /* ListProviderState.swift in Sources */,

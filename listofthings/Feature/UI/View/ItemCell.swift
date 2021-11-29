@@ -13,6 +13,7 @@ final class ItemCell: UITableViewCell {
     
     var item: Item? = nil {
         didSet {
+            self.itemView.icon = self.item?.logo
             self.itemView.title = self.item?.title
             self.itemView.subtitle = self.item?.subtitle
             self.itemView.info = self.item?.info
