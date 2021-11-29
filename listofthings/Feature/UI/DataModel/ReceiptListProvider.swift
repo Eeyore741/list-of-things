@@ -15,5 +15,6 @@ protocol ReceiptListProviderDelegate: AnyObject {
 
 protocol ReceiptListProvider {
     var receiptListProviderState: ReceiptListProviderState { get }
+    var receiptListProviderDelegate: ReceiptListProviderDelegate? { set get }
     func fetchReceiptsWithOffset(_ offset: Int, andLimit limit: Int)
 }

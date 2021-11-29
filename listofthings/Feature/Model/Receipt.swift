@@ -15,3 +15,5 @@ struct Receipt {
 }
 
 extension Receipt: Decodable { }
+
+extension Receipt: Equatable { }

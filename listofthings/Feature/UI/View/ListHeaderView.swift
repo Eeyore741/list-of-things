@@ -21,7 +21,11 @@ final class ListHeaderView: UITableViewHeaderFooterView {
     }
     
     private var constraintsLayoutOnce: Bool = false
-    private let headerView: HeaderView = HeaderView()
+    private let headerView: HeaderView = {
+        let view = HeaderView()
+        view.backgroundColor = .lightGray
+        return view
+    }()
     
     override func updateConstraints() {
         guard self.constraintsLayoutOnce == false else { return super.updateConstraints() }
@@ -31,7 +35,7 @@ final class ListHeaderView: UITableViewHeaderFooterView {
         self.contentView.addSubview(self.headerView)
         NSLayoutConstraint.activate([
             self.contentView.topAnchor.constraint(equalTo: self.headerView.topAnchor),
-            self.contentView.leadingAnchor.constraint(equalTo: self.headerView.leadingAnchor),
+            self.contentView.readableContentGuide.leadingAnchor.constraint(equalTo: self.headerView.leadingAnchor),
             self.contentView.bottomAnchor.constraint(equalTo: self.headerView.bottomAnchor),
             self.contentView.trailingAnchor.constraint(equalTo: self.headerView.trailingAnchor)
         ])

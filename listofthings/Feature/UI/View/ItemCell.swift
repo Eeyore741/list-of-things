@@ -31,7 +31,7 @@ final class ItemCell: UITableViewCell {
         
         NSLayoutConstraint.activate([
             self.contentView.topAnchor.constraint(equalTo: self.itemView.topAnchor),
-            self.contentView.leadingAnchor.constraint(equalTo: self.itemView.leadingAnchor),
+            self.contentView.readableContentGuide.leadingAnchor.constraint(equalTo: self.itemView.leadingAnchor),
             self.contentView.bottomAnchor.constraint(equalTo: self.itemView.bottomAnchor),
             self.contentView.trailingAnchor.constraint(equalTo: self.itemView.trailingAnchor)
         ])

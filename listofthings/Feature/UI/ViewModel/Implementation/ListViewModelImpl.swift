@@ -31,6 +31,7 @@ final class ListViewModelImpl: ListViewModel {
     }
     
     typealias Header = String
+    var sections: [Header] = []
     var items: [Header: [ItemCell.Item]] = [:]
     
     func numberOfItemsInSection(_ section: Int) -> Int {
@@ -41,11 +42,12 @@ final class ListViewModelImpl: ListViewModel {
     }
     
     var numberOfSections: Int {
-        return self.items.keys.count
+        return self.sections.count
     }
     
     func fetchItems() {
         self.documentsProvider.fetchDocuments()
+        self.receiptsProvider.fetchReceiptsWithOffset(0, andLimit: 0)
     }
     
     func fillCell(_ cell: ItemCell, atIndexPath indexPath: IndexPath) {
@@ -57,8 +59,7 @@ final class ListViewModelImpl: ListViewModel {
     }
     
     func fillHeader(_ header: ListHeaderView, atIndex index: Int) {
-        let headers = self.items.keys.sorted()
-        header.text = headers[index]
+        header.text = self.sections[index]
     }
 }
 
@@ -86,14 +87,36 @@ private extension ListViewModelImpl {
     }()
     
     func updateSectionsAndItems() {
+//        self.availableItems.documents.forEach {
+//            let header = Self.sectionDateFormatter.string(from: $0.createdAt)
+//
+//            if self.items.keys.contains(header) == false {
+//                self.items[header] = []
+//            }
+//            self.items[header]?.append(ItemCell.Item.init(withDocument: $0))
+//        }
         
-        self.availableItems.documents.forEach {
-            let header = Self.sectionDateFormatter.string(from: $0.createdAt)
-            
+//        self.sections = []
+        var dates: [Date] = self.availableItems.documents.map { $0.createdAt }
+        dates = dates + self.availableItems.receipts.map { $0.purchaseDate }
+        dates.sort()
+        dates.forEach {
+            let header = Self.sectionDateFormatter.string(from: $0)
+            if self.sections.contains(header) == false {
+                self.sections.append(header)
+            }
             if self.items.keys.contains(header) == false {
                 self.items[header] = []
             }
+        }
+        
+        self.availableItems.documents.forEach {
+            let header = Self.sectionDateFormatter.string(from: $0.createdAt)
             self.items[header]?.append(ItemCell.Item.init(withDocument: $0))
+        }
+        self.availableItems.receipts.forEach {
+            let header = Self.sectionDateFormatter.string(from: $0.purchaseDate)
+            self.items[header]?.append(ItemCell.Item.init(withReceipt: $0))
         }
     }
 }
@@ -125,6 +148,13 @@ private extension ItemCell.Item {
         self.title = document.subject
         self.subtitle = Self.dateFormatter.string(from: document.createdAt)
         self.info = document.senderName
+    }
+    
+    init(withReceipt receipt: Receipt) {
+        self.logo = receipt.logo
+        self.title = receipt.storeName
+        self.subtitle = Self.dateFormatter.string(from: receipt.purchaseDate)
+        self.info = ""
     }
     
     static let dateFormatter: DateFormatter = {

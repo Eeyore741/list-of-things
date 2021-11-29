@@ -38,12 +38,10 @@ final class ListViewController: UIViewController {
             self.tableView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor),
         ])
         
+        self.tableView.delegate = self
         self.tableView.dataSource = self
         self.tableView.register(ItemCell.self, forCellReuseIdentifier: ItemCell.self.description())
         self.tableView.register(ListHeaderView.self, forHeaderFooterViewReuseIdentifier: ListHeaderView.self.description())
-        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 70.0
-        self.tableView.sectionHeaderHeight = UITableView.automaticDimension
         
         self.viewModel.fetchItems()
     }
@@ -59,8 +57,9 @@ extension ListViewController: ListViewModelDelegate {
         switch viewModel.listViewModelState {
         case .idle:
             self.updateListContent()
+            self.navigationItem.title = "List"
         case .busy:
-            break // show activity indicator
+            self.navigationItem.title = "Loading list…"
         }
     }
 }
@@ -90,5 +89,13 @@ extension ListViewController: UITableViewDataSource {
         
         self.viewModel.fillCell(cell, atIndexPath: indexPath)
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        70.0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        20.0
     }
 }
