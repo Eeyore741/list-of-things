@@ -42,6 +42,10 @@ final class ListViewController: UIViewController {
         self.tableView.dataSource = self
         self.tableView.register(ItemCell.self, forCellReuseIdentifier: ItemCell.self.description())
         self.tableView.register(ListHeaderView.self, forHeaderFooterViewReuseIdentifier: ListHeaderView.self.description())
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 70.0
+        self.tableView.sectionHeaderHeight = UITableView.automaticDimension
+        self.tableView.estimatedSectionHeaderHeight = 20.0
         
         self.viewModel.fetchItems()
     }
@@ -89,13 +93,5 @@ extension ListViewController: UITableViewDataSource {
         
         self.viewModel.fillCell(cell, atIndexPath: indexPath)
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        84.0
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        20.0
     }
 }

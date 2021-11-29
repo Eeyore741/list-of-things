@@ -14,6 +14,7 @@ final class ItemView: UIView {
     var icon: String? {
         set {
             self.iconLabel.text = newValue
+            self.iconLabel.isHidden = newValue == nil
         }
         get {
             self.iconLabel.text
@@ -23,6 +24,7 @@ final class ItemView: UIView {
     var title: String? {
         set {
             self.titleLabel.text = newValue
+            self.titleLabel.isHidden = newValue == nil
         }
         get {
             self.titleLabel.text
@@ -32,6 +34,7 @@ final class ItemView: UIView {
     var subtitle: String? {
         set {
             self.subtitleLabel.text = newValue
+            self.subtitleLabel.isHidden = newValue == nil
         }
         get {
             self.subtitleLabel.text
@@ -41,6 +44,7 @@ final class ItemView: UIView {
     var info: String? {
         set {
             self.infoLabel.text = newValue
+            self.infoLabel.isHidden = newValue == nil
         }
         get {
             self.infoLabel.text
@@ -57,6 +61,7 @@ final class ItemView: UIView {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .darkGray
+        label.numberOfLines = 3
         return label
     }()
     

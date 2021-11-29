@@ -17,6 +17,7 @@ final class ItemCell: UITableViewCell {
             self.itemView.title = self.item?.title
             self.itemView.subtitle = self.item?.subtitle
             self.itemView.info = self.item?.info
+            self.itemView.layoutIfNeeded()
         }
     }
     
@@ -29,9 +30,9 @@ final class ItemCell: UITableViewCell {
         
         self.itemView.translatesAutoresizingMaskIntoConstraints = false
         self.contentView.addSubview(self.itemView)
-        
+
         NSLayoutConstraint.activate([
-            self.contentView.topAnchor.constraint(equalTo: self.itemView.topAnchor),
+            self.contentView.topAnchor.constraint(equalTo: self.itemView.topAnchor, constant: -12.0),
             self.contentView.readableContentGuide.leadingAnchor.constraint(equalTo: self.itemView.leadingAnchor),
             self.contentView.bottomAnchor.constraint(equalTo: self.itemView.bottomAnchor),
             self.contentView.trailingAnchor.constraint(equalTo: self.itemView.trailingAnchor)
