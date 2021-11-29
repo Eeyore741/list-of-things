@@ -8,15 +8,19 @@
 import Foundation
 
 struct Document {
+    let key: String
     let subject: String
-    let createdAt: Date?
+    let createdAt: Date
     let senderName: String
     let logo: String
 }
 
+extension Document: Equatable { }
+
 extension Document: Decodable {
     
     enum CodingKeys: String, CodingKey {
+        case key = "key"
         case subject = "subject"
         case createdAt = "created_at"
         case senderName = "sender_name"
@@ -24,6 +28,7 @@ extension Document: Decodable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: Document.CodingKeys.self)
+        self.key = try container.decode(String.self, forKey: CodingKeys.key)
         self.subject = try container.decode(String.self, forKey: CodingKeys.subject)
         self.senderName = try container.decode(String.self, forKey: CodingKeys.senderName)
         self.logo = "📄"

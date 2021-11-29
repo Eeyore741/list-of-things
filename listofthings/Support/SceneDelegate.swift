@@ -19,12 +19,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         self.window = UIWindow(windowScene: scene)
         
-        let configuration = PersistentListProvider.Configuration.init(documentsFileName: "Documents", receiptsFileName: "Receipts")
+        let configuration = PersistentListProvider.Configuration.init(documentsFileName: "Documents", receiptsFileName: "Receipts", delay: 1)
         let persistentProvider = PersistentListProvider(configuration: configuration)
         let viewModel = ListViewModelImpl(documentsProvider: persistentProvider, receiptsProvider: persistentProvider)
-        let rootViewController = ListViewController(viewModel: viewModel)
+        let listViewController = ListViewController(viewModel: viewModel)
+        let navigationController = UINavigationController(rootViewController: listViewController)
         
-        self.window?.rootViewController = rootViewController
+        self.window?.rootViewController = navigationController
         self.window?.makeKeyAndVisible()
     }
 

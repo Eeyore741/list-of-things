@@ -7,11 +7,16 @@
 
 import UIKit
 
+protocol ListViewModelDelegate: AnyObject {
+    func listViewModelDelegateDidUpdateState(_ viewModel: ListViewModel)
+}
+
 protocol ListViewModel {
     var listViewModelState: ListViewModelState { get }
-    var numberOfDocuments: Int { get }
-    var numberOfReceipts: Int { get }
-    func fetchDocuments() async throws
-    func fetchReceipts() async throws
-    func fillCell(_ cell: UITableViewCell, atIndexPath indexPath: IndexPath)
+    var listViewModelDelegate: ListViewModelDelegate? { set get }
+    var numberOfSections: Int { get }
+    func numberOfItemsInSection(_ section: Int) -> Int
+    func fetchItems()
+    func fillCell(_ cell: ItemCell, atIndexPath indexPath: IndexPath)
+    func fillHeader(_ header: ListHeaderView, atIndex index: Int)
 }
